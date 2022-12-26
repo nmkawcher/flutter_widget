@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
    Widget build(BuildContext context) {
 
      double screenWidth = MediaQuery.of(context).size.width;
-     print(screenWidth);
+
 
      return SafeArea(
        child: Scaffold(
@@ -43,12 +44,12 @@ class MyApp extends StatelessWidget {
                decoration: const BoxDecoration(
                  color: Colors.white
                ),
-               child: Text('Doctor Para',style: TextStyle(color: Colors.black,fontSize: 16),),
+               child: const Text('Doctor Para',style: TextStyle(color: Colors.black,fontSize: 16),),
              ),
 
-             SizedBox(height: 10,),
+             const SizedBox(height: 10,),
 
-             Padding(padding: EdgeInsets.all(15),
+             Padding(padding: const EdgeInsets.all(15),
              child: Row(
                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
@@ -59,7 +60,7 @@ class MyApp extends StatelessWidget {
                ],
              ),
              ),
-             Padding(padding: EdgeInsets.only(left: 15,right: 15,bottom: 15),
+             Padding(padding: const EdgeInsets.only(left: 15,right: 15,bottom: 15),
              child: Row(
                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
@@ -79,7 +80,102 @@ class MyApp extends StatelessWidget {
                  image: DecorationImage(fit:BoxFit.cover,image: NetworkImage('https://img.freepik.com/free-vector/blue-technology-digital-banner-design_1017-32257.jpg?w=2000',))
                ),
 
-             )
+             ),
+
+             SizedBox(height: 10,),
+
+             Row(
+              children: [
+                Expanded(child: Container(
+                  margin: EdgeInsets.only(right: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Column(
+                    children: [
+                      Image.network('https://t3.ftcdn.net/jpg/02/60/04/08/360_F_260040863_fYxB1SnrzgJ9AOkcT0hoe7IEFtsPiHAD.jpg',height: 60,width: 60,),
+                      SizedBox(height: 10,),
+                      Text('Doctor Yousuf Bangladesh',maxLines: 2,)
+                    ],
+                  ),
+                ),),
+                Expanded(child: Container(
+                  margin: EdgeInsets.only(right: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Column(
+                    children: [
+                      Image.network('https://t3.ftcdn.net/jpg/02/60/04/08/360_F_260040863_fYxB1SnrzgJ9AOkcT0hoe7IEFtsPiHAD.jpg',height: 60,width: 60,),
+                      SizedBox(height: 10,),
+                      Text('Doctor Yousuf Bangladesh',)
+                    ],
+                  ),
+                ),),
+                Expanded(child: Container(
+                  margin: EdgeInsets.only(right: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Column(
+                    children: [
+                      Image.network('https://t3.ftcdn.net/jpg/02/60/04/08/360_F_260040863_fYxB1SnrzgJ9AOkcT0hoe7IEFtsPiHAD.jpg',height: 60,width: 60,),
+                      SizedBox(height: 10,),
+                      Text('Doctor Yousuf Bangladesh',)
+                    ],
+                  ),
+                ),),
+              ],
+            ),
+
+             SizedBox(height: 10,),
+
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child:  Row(
+                children: [
+                  Container(
+                    height: 100,
+                    margin: const EdgeInsets.only(right: 10),
+                    width: screenWidth *.6,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(fit:BoxFit.cover,image: NetworkImage('https://img.freepik.com/free-vector/blue-technology-digital-banner-design_1017-32257.jpg?w=2000',))
+                    ),
+                    child: Column(
+                      children: [
+                        Align(
+                          alignment: Alignment.topRight,
+                            child: Container(
+                              margin: EdgeInsets.all(5),
+                              padding: EdgeInsets.symmetric(vertical: 5,horizontal: 10),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10)
+                              ),
+                                child: Text('30% OFF',style: TextStyle(fontSize: 10,color: Colors.black),))),
+
+
+                      ],
+                    ),
+                  ),
+                  Container(
+                    height: 100,
+                    width: screenWidth *.6,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(fit:BoxFit.cover,image: NetworkImage('https://img.freepik.com/free-vector/blue-technology-digital-banner-design_1017-32257.jpg?w=2000',))
+                    ),
+                  ),
+                ],
+              ),
+            )
+
+
+
            ],
          ),
        ),
@@ -89,7 +185,7 @@ class MyApp extends StatelessWidget {
    Widget serviceWidget(String text,IconData sIcon,double margin){
      return Container(
        margin: EdgeInsets.only(right: margin),
-       padding: EdgeInsets.symmetric(horizontal: 10,vertical: 15),
+       padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 15),
        decoration: BoxDecoration(
            borderRadius: BorderRadius.circular(5),
            color: Colors.white
@@ -97,8 +193,8 @@ class MyApp extends StatelessWidget {
        child: Column(
          children: [
            Icon(sIcon,size: 25,color: Colors.amber,),
-           SizedBox(height: 5,),
-           Text(text,style: TextStyle(color: Colors.black,fontSize: 16),overflow: TextOverflow.ellipsis,)
+           const SizedBox(height: 5,),
+           Text(text,style: const TextStyle(color: Colors.black,fontSize: 16),overflow: TextOverflow.ellipsis,)
          ],
        ),
      );
